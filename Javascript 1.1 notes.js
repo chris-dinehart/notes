@@ -1,15 +1,5 @@
 // Javascript 1.1 8/17
 
-Git review:
-
-ls -A // Show everything, including hidden files.
-
-Git init // Create a git repository.
-Git status // Shows status of repository files.
-Git add //
-Git commit
-Get out of VIM: esc, :q // Get out of anything in the terminal safely.
-
 // Practice questions
 
 //Create a function called first that has one parameter, which will be an array. First should return the first element of an array that is passed to it.
