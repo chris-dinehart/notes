@@ -69,4 +69,119 @@
             }
             return evenNums;
         }
+
+// Objects
+
+    // Creating an object:
+        var myObject = {
+            // property: value
+            name: "DevMountain",
+            coolness: 100,
+            hometown: "provo"
+        };
+
+        // Examples:
+            var myDog = {
+                name: "Chuckles",
+                breed: "German Shepherd"
+                age: 2
+            };
+
+            var myCar = {
+                make: "Ford",
+                model: "Fiesta",
+                year: 1978,
+                accidents: [1982, 1995, 2011]
+            }
+
+    // Dot Notation - Can be used to access, change, or create properties on an object.
         
+        var myCar = {
+            make: "Ford",
+            model: "Fiesta",
+            year: 1978,
+            accidents: [1982, 1995, 2011]
+        }
+
+        myCar.accidents; // Accesses the property "accidents" and gives "1982, 1995, 2011".
+        myCar.make = "Chevy"; // Updates "make" to Chevy.
+        myCar.model = "Cruise"; // Updates "model" to Cruise.
+        myCar.color = "Blue"; // Adds "color" property and assigns "Blue".
+
+    // Bracket Notation - Pull informatoin off an object.
+
+            var myCar = {
+                make: "Ford",
+                model: "Fiesta",
+                year: 1978,
+                accidents: [1982, 1995, 2011]
+            }
+
+            myCar[1] // Gives the value under the first property in the object.
+            
+            var yearBought = "year";
+            myCar[yearBought] // Gives 1978.
+        
+        // Changing properties on an object with Bracket Notation:
+
+            var chameleon = {
+                color: "red",
+                texture: "scaly"
+            };
+
+            function changeProp(propName, newValue) {
+                chameleon[propName] = newValue; // Changes value on chameleon using propName provided and value provided below.
+            };
+
+            changeProp("color", "fucsia");
+
+            chameleon.color // Gives fucsia.
+
+        // Combining Strings or Numbers:
+            
+            var chameleon = {
+                color: "red",
+                texture: "scaly"
+            };
+            chameleon["tex" + "ture"] // Gives "scaly". Can combine strings using +.
+
+
+            var shelves = {
+                1:["Beowulf", "Sherlock Holmes"],
+                2:"trophy"
+            }
+            shelves[1][1] // Gives first item in Object:["Beoulf", "Sherlock Holmes"] Gives first index item in the array: ["Sherlock Holmes"]
+            shelves[1 + 1] // Gives "trophy".
+
+    // Methods (functions that live on an object)
+        //Use Dot Notation to update and access values.
+
+        // Function inside an object:
+            var myCat = {
+                name: "Excaliber",
+                meow: function() {
+                    console.log("meow");
+                }
+            }
+
+            var myCar = {
+                miles: 20000,
+                drive: function() {
+                    myCar.miles++;
+                }
+            };
+            myCar.drive(); // Runs drive function and adds 1 to the # of miles driven.
+            myCar.miles // Returns updated number at 20001
+
+            var book = {
+                title: "Mistborn"
+                pagesLeft: 340,
+                read: function() {
+                    book.pagesLeft--
+                }
+            };
+            book.read(); // Runs read functoin and subtracts 1 from the pagesLeft.
+            book.startOver = function() { // Adds property "startOver" with function as value.
+                book.pagesLeft = 540;
+            }
+            book.startOver(); // Runs startOver function and changes pagesLeft to 540.
