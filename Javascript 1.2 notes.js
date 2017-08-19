@@ -185,3 +185,136 @@
                 book.pagesLeft = 540;
             }
             book.startOver(); // Runs startOver function and changes pagesLeft to 540.
+    
+    
+    // Callbacks - When we pass a function into another function as a parameter. (A function that is passed as a parameter into another function which invokes it.)
+            doSomethingThatTakesAWhile(function(){
+                //code to do when it's done
+            })        
+    
+            takesACallback(15,myFunction);
+
+            createWorldPeace(solveWorldHunger)
+
+        //Examples:
+            
+            function delayedBirthday() {
+                console.log("Happy Late Birthday!");
+            }
+            setTimeout(delayedBirthday, 1000); // Invokes "delayedBirthday" after 1000 miliseconds.
+
+
+            array = [2,4,6,8];
+
+            array.forEach(function(num, i, arr) { // Function called "forEach" part of array. 
+                return arr[i]++;
+            })
+                // returns [3,5,7,9]
+    
+
+                function takesACallback(num,callback) {
+                    callback(num);
+                }
+
+    
+    
+    // Practice:
+            
+    // Create a newCar function that takes in two parameters: make and model.  
+    // Using those parameters, create a car object, give it make and model properties, and return it from the function.
+
+        function newCar(make, model) {
+            var car = {
+            make: make, 
+            model: model
+        };
+        return car;
+        }
+
+    // Create a function called canDrive that takes in a person object that has a name and an age property. 
+    // If the person's age is greater than or equal to 16 then return a string concatenating their name with the string " is old enough to drive." 
+    // If the person's age is less than 16 then return a string concatenating their name with the string " is not old enough to drive."
+
+        function canDrive (person) {
+            if (person.age >= 16) {
+            return person.name + " is old enough to drive."
+            } else {
+            return person.name + " is not old enough to drive."
+            }
+        }
+
+    // Create a function called changeEmail that takes in a user object and a newEmail string. 
+    // Replace the user's current email address (assigned to the email property) with the newEmail string, then return the updated user object.
+
+        var string = "newEmail";
+        function changeEmail (user, string) {
+        user.email = string;
+        return user;
+        }
+
+    //Create a function called unknownPerson that takes in a person object. 
+    // This person object will have properties such as name, age, gender, etc. 
+    // Loop through all the properties of the object and set each value to "Unknown", then return the object. 
+
+    // For example, if "person" is {name: "Dolph L.", age: 33} then the function would return {name: "Unknown", age: "Unknown"}.
+
+        function unknownPerson (person) {
+            for (var prop in person) {
+            person[prop] = "Unknown";
+            }
+            return person;
+        }
+
+    // Create a function called truthyObject that takes in a user object. 
+    // This function should loop through the user object checking to make sure that each of its values is truthy. 
+    // If a value is not truthy then remove it from the object. 
+    // Return the updated object after looping through it.
+
+        function truthyObject (user) {
+            for (var prop in user) {
+            if (!user[prop]) {
+                delete user[prop];
+            }
+            }
+            return user;
+        }
+
+    //Convert the following If statement into a Ternary
+
+        // if (num > 5) {
+            
+        //      return "greater"
+            
+        //     } else {
+            
+        //       return "lesser"
+            
+        //     }
+
+        function func() {
+            var num = 7
+            //Write your code below here
+            
+            return num > 5 ? "greater" : "lesser";
+          }
+          func()
+
+    // Write a ternary that checks the gender variable. If it is "male" return "Mr", otherwise return "Mrs".
+
+        var gender = "male"
+        
+        function func() {
+        //Write your code below here
+        
+        return gender == "male" ? "Mr" : "Mrs";
+        }
+
+    // Write a Ternary that checks if age is greater than or equal to 18. If it is, set adult to true. If not, set it to false.
+
+        var age = 17
+        var adult
+        
+        function func() {
+        return age >= 18 ? adult = true : adult =false;
+        }
+        func()

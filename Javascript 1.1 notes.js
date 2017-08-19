@@ -210,11 +210,34 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
 function addTen(numbers) {
   for (var i = 0; i < numbers.length; i++){
-    parseInt(numbers);
-    numbers[i] += 10;
+    numbers[i] = parseInt(numbers[i]);
   }
-  return numbers;
+    numbers.forEach(function(val,i,numbers) {
+      numbers[i] = val + 10;
+    });
+    return numbers;
 }
+
+console.log(addTen(numbers));
+
+OR
+
+function addTen(numbers) {
+  var answers = [];
+  for (var i = 0; i < numbers.length; i++){
+    answers.push(+numbers[i] + 10)
+  }
+  return answers;
+}
+
+function addTen(numbers) {
+  var answers = [];
+  for (var i = 0; i < numbers.length; i++){
+    answers.push(Number(numbers[i]) + 10)
+  }
+  return answers;
+}
+
 
 // Write a function called 'reverse' with one parameter (string) 
 // The function should return that string after it's been reversed.
