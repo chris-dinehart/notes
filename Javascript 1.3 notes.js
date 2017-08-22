@@ -81,4 +81,118 @@
         }
 
         var tripleBigBoy = new Burger (3);
+
+// Deleting properties from Objects.
+    
+    // Use "delete" keyword.
+
+        delete "property"; // This deletes the property.
+    
+        // Examples:
+
+            myObj = {
+                code: 'awesome',
+                boredom: 'lame'
+            }
+            delete myObj.boredom;
+
+        //-----------------------------
+            var work = {
+                success: 'great',
+                mistake: 'woops'
+            }
+            delete work.mistake;
+            delete work['success'];
+
+// For In Loops - Used to loop over all the items in an object and interact dynamically with that object as we go.
+
+
+        // Example:
+            var favorites = {
+                color: 'red',
+                flavor: 'vanilla'
+            };
+
+            for (var prop in favorites) {
+                console.log(favorites[prop]);
+            }
+
+// Copying with Assign - Making a copy of objects, or merging objects together.
         
+        Object.assign ()
+
+        // Examples:
+            var obj = {
+                name: 'Joseph'
+            };
+            var obj2 = Object.assign({},obj);
+
+        //--------------------------
+            var cat = {
+                name: 'Fluffles'
+            }
+            var tuna = {
+                container: 'can'
+            }
+
+            var dogFood = Object.assign(cat,tuna); // Copies TO cat object all properties FROM the tuna object.
+            var dogFood = Object.assign({},cat,tuna); // Copies cat object merged with tuna object because empty object was passed in first. 
+
+
+// Object destructuring:
+
+        // Examples:
+
+            // Intro:
+            // Object destructuring allows you to "unpack" properties from objects and assign them to variables. 
+
+            // Problem:
+            // Here you are given the object animalCount. Destructure this object so that you have 3 distinct variables with the values of the matching properties from animalCount.
+            // Important: Let and const do not register with Replit's unit testing. You must use var or the tests will fail.
+
+                let animalCount = {
+                    cats: 2,
+                    dogs: 5,
+                    mice: 0
+                }
+                
+                var{cats, dogs, mice} = animalCount;    
+
+        //----------------------------
+            //Intro:
+            // Now that you have some experience with destructuring, we will take it one step further. Instead of using a variable to assign values, we will use an object literal. Uncomment the code on the side to see an example of this.
+            // Problem:
+            // Create an object literal to assign the variables students, mentors and instructors a value through destructuring. Set the value of students to be 24, mentors to be 3, and instructors to be 5.
+
+                var {students, mentors, instructors} = {students: 24, mentors: 3, instructors: 5}  
+            
+        //-----------------------------   
+            // Create an object named languages. Give it the properties 'French', 'English' and 'Spanish'. Give these properties the value true if you speak the language, false if you do not.
+            // Use destructuring to assign the values of these properties to new variables.
+            // Important: Let and const do not register with Replit's unit testing. You must use var or the tests will fail.
+
+                languages = {
+                    French: false,
+                    English: true,
+                    Spanish: true
+                }
+                
+                var{French, English, Spanish} = languages
+        //-----------------------------
+            //Write a function called subtraction with an object parameter. The object passed in this function will have the property names num1 and num2. Use object destructuring to assign the values of these properties to new variables. Subtract num1 from num2 and return the result. 
+            // Important: Let and const do not register with Replit's unit testing. You must use var or the tests will fail.
+
+                var subtraction = (obj) => {
+                    var {num1, num2} = obj;
+                    var total = num1 - num2;
+                    return total;
+                }
+        //-----------------------------
+              // Create a function called zooAnimals that will take an object parameter. The object passed to this function will have the property names lion, tiger, and bear. The values of these properties will be a number representing the count of that animal in the zoo. 
+              // Using object destructuring, return the value of all of these properties combined.
+
+                var zooAnimals = (obj) => {
+                    var {lion, tiger, bear} = obj;
+                    var total = lion + tiger + bear;
+                    return total;
+                }
