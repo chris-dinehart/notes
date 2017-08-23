@@ -188,11 +188,88 @@
                     return total;
                 }
         //-----------------------------
-              // Create a function called zooAnimals that will take an object parameter. The object passed to this function will have the property names lion, tiger, and bear. The values of these properties will be a number representing the count of that animal in the zoo. 
-              // Using object destructuring, return the value of all of these properties combined.
+            // Create a function called zooAnimals that will take an object parameter. The object passed to this function will have the property names lion, tiger, and bear. The values of these properties will be a number representing the count of that animal in the zoo. 
+            // Using object destructuring, return the value of all of these properties combined.
 
                 var zooAnimals = (obj) => {
                     var {lion, tiger, bear} = obj;
                     var total = lion + tiger + bear;
                     return total;
                 }
+
+        //------------------------------
+            // Create a class called Car that creates two properties on each Car object.
+            // The first property should be called manufacturer and the second property should be called year.
+            // The class should also have a method called displayManufacturer that returns the manufacturer.
+            // It should also have a method called displayYear that returns the year.
+
+                class Car {
+                    constructor(manufacturer, year) {
+                      this.manufacturer = manufacturer,
+                      this.year = year
+                    }
+                    
+                    displayManufacturer() {
+                      return this.manufacturer;
+                    }
+                    
+                    displayYear() {
+                      return this.year;
+                    }
+                  }
+                  
+                  var BillysFirstCar = new Car('Tesla', 2017)
+                  BillysFirstCar.displayManufacturer();
+                  BillysFirstCar.displayYear();
+        //------------------------------
+            // Write a function called greeting. Instead of giving it an object parameter, give it a destructured object as it's parameter. The properties of this object will be name and title.
+            // Return from this function a greeting sentence that should say "Hello, <title> <name>!". Title and name in this sentence should be replaced with the values of the destructured object variables. 
+            // Important: Let and const do not register with Replit's unit testing. You must use var or the tests will fail.
+            // (Hint: These unit tests are very sensitive to spacing, punctuation and casing.)
+                
+                var greeting = ({title, name}) => {
+                     return "Hello," + " " + title + " " + name + "!"
+                }
+        //------------------------------
+            // The class Puppy needs two methods.
+            // The getsTreat method should accept one parameter. It should increase happiness by 20 for each treat received, then return the new happiness value.
+            // The takesNap method should decrease energy by 45 and increase behavior by 15.
+            // Make sure you make the puppy take his nap in order to change his energy and behavior levels.
+
+                class Puppy {
+                    
+                    constructor(happiness, energy, behavior) {
+                        this.happiness = happiness,
+                        this.energy = energy,
+                        this.behavior = behavior
+                    }
+                    
+                    getsTreats(treat) {
+                        var answer = this.happiness + treat * 20;
+                        return answer;
+                    }
+                    
+                    takesNap() {
+                        this.energy -= 45;
+                        this.behavior += 15;
+                    }
+                    
+                    }
+                    
+                    var Charles = new Puppy(75, 25, 30)
+                    Charles.takesNap()
+                    
+                    console.log (Charles)
+
+        //-------------------------------
+            //Use the built in filter method to filter over the jobs array of objects and return the object of the person with a job as a programmer. Make sure to use the arrow function in conjunction with the filter method.
+            // Should not use the ES5 function declaration syntax in your final solution.
+            // Should not use a for loop.
+            // Should not have the function keyword anywhere in the solution.
+
+                var jobs = [{receptionist: "James"}, 
+                {programmer: "Steve"},
+                {designer: "Alicia"}];
+
+                var solution = jobs.filter(jobs => jobs.programmer);
+        
