@@ -1,0 +1,276 @@
+<!-- CSS Specificity -->
+
+    Inline Styling --> ID's --> class, pseudo-class attributes --> elements
+    1000 pts          100 pts            10pts                     1 point    
+
+        <div>
+            <p>I'm a text tag!</p>
+        </div>
+
+        <div>
+            <p id="red-text">I have an id too!</p>
+        </div>
+
+        div p {
+            color:yellow;
+        } <!-- Gives all "p" inside of a "div" the color yellow. -->
+
+        #red-text {
+            color:red;
+        } <!-- Changes text to red despite statement above because ID's are more specific. -->
+
+<!-- Dry and CSS -->
+    Dry stands for "Don't Repeat Yourself".
+        Use semantic html elements and use more css classes where needed.
+
+<!-- Reset CSS -->
+    Create a reset.css or normalize.css file to make sure the web page looks the same across browsers.
+
+<!-- Meta Tags -->
+    Give overall informatoin for a site. Used by search engines to search and display.
+        <meta charset="UTF-8"> <!-- Specifies the character set to be used. Most English sites should be UTF-8. -->
+        <meta name="description" content="The best website ever."> <!-- Gives the description of the site. -->
+        <meta name="keywords" conent="Unicorns,Tanks,Edgar Allen Poe"> <!-- List of keywords a search engin might use to find it. -->
+        <meta name="author" content="Gregory Talbot"> <!-- Author of the site. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes sure site will display properly on mobile. -->
+
+<!-- Display Property -->
+        
+        div {
+            display: block;
+            display: inline;
+            display: inline-block;
+        }
+
+            Block 
+            Default layout for most elements is block. Block means each element will be put on it's own line. Elements go top to bottom on the left.
+            They will have access to the full width of the screen if they would like to use it.
+            
+            Inline 
+            Default layout for spans. Element will not be put on a new line, they will take up only as much width as needed. Elements go from left to right.
+            Elements that are "inline" can't have their own width and height.
+
+            Inline-Block 
+            Element will not be put on a new line, they will take up only as much width as needed. Elements go from left to right.
+            Elements that are "inline-block" can have their own width and height.
+
+<!-- Text Properties -->
+
+        h1 {
+            font-size: 3rem;
+            color: #333;
+            line-height: 2em;
+            text-alignment: right;
+            background: yellow;
+            font-family: "Helvetica", sans-serif;
+            letter-spacing: .25rem;
+        }
+
+        Font-Size 
+        Changes size of the text.
+
+        Color
+        Changes color of the text.
+
+        Line Height
+        Total amount of space the element will take up. Text by default is at the bottom of the current specified space.
+
+        Text Alignment
+        Where we want to align. Default is center. 
+
+        Background
+        Changes background color of text element.
+
+        Font Family
+        Type of text you want to apply based on what you have available to use.
+
+        Letter Spacing
+        Changes spacing in between each letter.
+
+<!-- Background Properties -->
+
+        div {
+            background-image: url('http://pics.com/puppy');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no repeat;
+            background-color: gray;
+        }
+
+        Background Image 
+        Puts the image at the very back and allows elements on top of it.
+
+        Background Position 
+        Adjust where and how the background is alligned.
+
+        Background Size 
+        Specifies size of the background.
+
+        Background Repeat
+        Specifies whether or not you want the background to repeat itself. You can see this easier with image backgrounds.
+
+        Background Color 
+        Specifies the color of the background.
+
+<!-- Width and Height -->
+
+        div {
+            height: 200px; Uses pixels. Static size.
+            width: 200px; Uses pixels. Static size.
+
+            height: 10vh; "vh" stands for view height. This takes 10% of overall height of browser screen. Does NOT factor in margins, border, or padding.
+            width: 50vw;  "vw" stands for view width. This takes 50% of overall width of browser screen. Does NOT factor in margins, border, or padding.
+
+            height: 50%; This is the percent of the parent element that we want to take up.
+            width: 50%; This is the percent of the parent element that we want to take up.
+
+            height: 1em; "em" specifies font height of letter m of current font for current element. This says that we want the height of the letter "m" in the current font.
+            width: 2em; "em" specifies font width of letter m of current font for current element. This is saying we want the width to be the size of 2 letter "m's" in the current font.
+
+            min-height: 1px; Says we can't get smaller in height than 1px.
+            max-height: 5em; Says we can't get bigger in height than 5em.
+            min-width: 50vw; Says we can't get wider than 50% of view height.
+            max-width: 50%; says we can't get wider than 50% of the parent element.
+        }
+
+<!-- CSS Box Model -->
+
+        4 layers of the box model:
+    
+            margin - pushes outwards
+                border - pushes inwards
+                    padding - pushes inwards
+                        content - pushes inwards
+            
+            Margin 
+            The space between the element and other elements. Starts at border and pushes outward.
+
+            Border 
+            The border of the element. Starts at outside of border and thickens border going inward.
+
+            Padding 
+            The space between the border of the element and the content. Starts at border and pushes inwards toward content.
+
+            Content 
+            Any text, image, or elements inside the element.
+
+        Example:
+
+        <div class="main-article">
+        </div>
+
+        .main-article {
+            border: 10px blue dotted;
+            padding: 10px 2px 10px 2px;
+            margin: 20px 15px;
+        }
+
+<!-- CSS Selectors -->
+
+    Classes:
+        
+        Finds the class called "blue-border":
+            .blue-border {
+                border: 2px blue solid;
+            }
+
+    Psuedo Classes:
+        
+        hover - styles when user is hovering over it.
+        focus - styles when user is focussed on an element.
+        active - styles when user is pressing button.
+        nth-child - styles when nth child condition is met.
+            
+        Styles the button with a background of purple ONLY when user is hovering over it.
+
+        button:hover {
+            background: purple;
+        }
+
+    ID's:
+        
+        Finds the ID's called "red-border":
+            #red-border {
+                border: 2px red solid;
+            }
+
+    Targeting nested elements:
+        
+        Finds all div's with a p element and styles the p elements:
+            div p {
+                background-color: green;
+            }
+        Finds all blue-border classes with a p tag and styles the p elements:
+            .blue-border p {
+                border: 2px blue solid;
+            }
+        Finds all red-border ID's with a p tag and styles the p elements:
+            #red-border p {
+                border: 2px red solid;
+            }
+    
+    Targeting elements directly:
+       
+        Finds all div's:
+            div {
+                margin: 5px;
+            }
+
+        Finds all input's and all p's:
+            input, p {
+                margin: 5px;
+            }
+
+        Finds all custom elements called "article":
+            article {
+                margin: 5px;
+            }
+
+    Direct children selector:
+
+        Finds all DIRECT children of the div that are p elements and styles them. HAS to be a direct child of the div.
+            div > p {
+            }
+
+    Nth child psuedo-selector:
+        
+        Adds on to a base selector. Finds li tags that pass the if statement of nth child.
+        
+        Finds the 2nd li tag and styles it.
+            li:nth-child(2){
+            }
+        Starts at beginning of li tags and styles every other one. (Would be good for zebra striping for example)
+            li:nth-child(2n <!-- 2n is every other so 3n would be every 3rd --> + 1 <!-- Where we start, so the first li tag in this case -->){
+            }
+            li:nth-child(2n + 1){
+            }
+    
+    Attribute selector:
+        
+        Targets specific attributes.
+
+        Selects the element of input with a type of text:
+            input[type="text"] {
+            }
+
+    Psuedo Elements:
+        
+        before - puts something before the element.
+        first-line - styles the first line of an element.
+        first-letter - styles the first letter of an element.
+        after - puts something after the element.
+
+            Adds a "+" before each list item:
+                li::before {
+                    conent: "+";
+                }
+            
+            Adds a smiley face image before each list item:
+                li::before {
+                    conent: url('./images/smiley);
+                }
+
+            Styles the first letter of each list item to be green:
+                li::first-letter {
+                    color: 'green';
+                }
