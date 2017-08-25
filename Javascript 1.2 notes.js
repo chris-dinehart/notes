@@ -532,3 +532,14 @@
                 }
                 return newArray;
             }
+    //--------------------------
+        // Inside the productOfArray function use the built in reduce method to loop over the array called numbers and return the product of all the numbers in the array. 
+        // Make sure to use the arrow function combined with the filter method. 
+
+            var numbers = "TBD";
+
+            var productOfArray = () => {
+                // Your Code Here
+                return numbers.reduce((answer, value) => {
+                return answer *= value},1)
+            }
